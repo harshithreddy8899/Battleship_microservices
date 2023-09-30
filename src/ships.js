@@ -1,15 +1,11 @@
-const ships=(len)=>{
+const ships=(length)=>{
     let hits=0;
-    const length=len;
-    function hit(){
-        this.hits+=1;
-        return hits;
+    function isSunk() {
+      return this.hits === this.length;
     }
-    function isSunk(){
-        if(hit===length)
-            return true;
-        return false;
+    function hit() {
+      this.hits += 1;
     }
-    return {length,hits,hit,isSunk};
+  return {length,hits,isSunk,hit};
 }
 module.exports = ships;
