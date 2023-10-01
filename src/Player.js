@@ -3,8 +3,6 @@ function Player(name) {
     function takeTurnComputer(enemyGameboard) {
       const x = Math.floor(Math.random() * 10);
       const y = Math.floor(Math.random() * 10);
-  
-      // Check if the move is legal (not already attacked)
       const isLegalMove = !enemyGameboard.missedAttacks.some(
         (coord) => coord.x === x && coord.y === y
       );

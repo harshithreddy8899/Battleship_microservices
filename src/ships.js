@@ -8,4 +8,4 @@ const ships=(length)=>{
     }
   return {length,hits,isSunk,hit};
 }
-module.exports = ships;
+export default ships;

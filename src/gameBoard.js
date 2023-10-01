@@ -1,29 +1,12 @@
+import ships from "./ships";
+
 const gameBoard=()=>{
     let ships=[];
     let missedAttacks=[];
-    function placeShip(ship, x, y, horizontal) {
-        if (horizontal) {
-          for (let i = 0; i < ship.length; i+=1) {
-            if (x + i >= 10) {
-              throw new Error('Ship placement out of bounds');
-            }
-            if (this.checkCollision(x + i, y)) {
-              throw new Error('Ship placement collision');
-            }
-            this.ships.push({ ship, x: x + i, y });
-          }
-        } else {
-          for (let i = 0; i < ship.length; i+=1) {
-            if (y + i >= 10) {
-              throw new Error('Ship placement out of bounds');
-            }
-            if (this.checkCollision(x, y + i)) {
-              throw new Error('Ship placement collision');
-            }
-            this.ships.push({ ship, x, y: y + i });
-          }
-        }
-      }
+    function placeShips(ship, x, y){
+        this.ships.push({ship,x,y});
+    }
+      
       function  receiveAttack(x, y) {
         // Check if the move is legal (not already attacked)
         const isLegalMove = !this.missedAttacks.some(
@@ -51,16 +34,15 @@ const gameBoard=()=>{
           return false;
         });
       }
-      function allShipsSunk() {
-        return this.ships.every((s) => s.ship.isSunk());
+      function allShipsSunk(newShips) {
+        return newShips.every((s) => s.ship.isSunk());
       }
       return {ships,
               missedAttacks,
-              placeShip,
+              placeShips,
               receiveAttack,
               checkCollision,
               allShipsSunk
             };
 }
-
-module.exports=gameBoard;
+export default gameBoard;
