@@ -1,4 +1,3 @@
-import ships from "./ships";
 
 const gameBoard=()=>{
     let ships=[];

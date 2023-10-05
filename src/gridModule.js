@@ -1,6 +1,6 @@
 import Ships from "./ships";
-import Player from "./Player";
-const gridModule=(playerGameboard,computerGameboard,player1,player2)=>{
+
+const gridModule=(playerGameboard,computerGameboard)=>{
     function createRedTable1() {
           const table = document.createElement('table');
 
@@ -178,7 +178,6 @@ const gridModule=(playerGameboard,computerGameboard,player1,player2)=>{
             cell.style.borderCollapse = 'collapse';
             cell.style.border = '3px solid black';
       
-            // Pass the values of i and j to the cellClickHandler function
             cell.addEventListener('click', cellClickHandler.bind(null, i, j));
             row.appendChild(cell);
           }
@@ -187,26 +186,10 @@ const gridModule=(playerGameboard,computerGameboard,player1,player2)=>{
         }
         return table;
       }
-      
-    // function handleCellAttack(rowIndex,colIndex){
-    //     const rows = table1.rows;
-      
-    //     // Check if the rowIndex and colIndex are within valid ranges
-    //     if (rowIndex >= 0 && rowIndex < rows.length && colIndex >= 0) {
-    //       const cells = rows[rowIndex].cells;
-      
-    //       // Check if colIndex is within valid range
-    //       if (colIndex < cells.length) {
-    //         // Change the background color of the specified cell
-    //         cells[colIndex].style.backgroundColor = 'red';
-    //       }
-    //     }
-      
-    //   }
       return {createRedTable1,
               createRedTable2,      
               tableFirst
              }
 }
-
+// module.exports='gridModule';
 export default gridModule;

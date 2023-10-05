@@ -1,16 +1,13 @@
 import gameBoard from "./gameBoard";
 import gridModule from "./gridModule";
-import Player from "./Player";
 
 const playerGameboard=gameBoard();
 const computerGameboard=gameBoard();
-const player1 = Player('Player 1');
-const player2 = Player('Player 2');
-const grids=gridModule(playerGameboard,computerGameboard,player1,player2);
+const grids=gridModule(playerGameboard,computerGameboard);
 const table1=grids.createRedTable1();
 const table2=grids.createRedTable2(table1);
-grids.tableFirst(5,playerGameboard,1,table1,player1);
-grids.tableFirst(5,computerGameboard,0,table2,player2);
+grids.tableFirst(5,playerGameboard,1,table1);
+grids.tableFirst(5,computerGameboard,1,table2);
 document.body.appendChild(table1);
 document.body.appendChild(table2);
 
