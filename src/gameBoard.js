@@ -7,7 +7,7 @@ const gameBoard=()=>{
         this.ships.push({ship,x,y});
     }
       
-      function  receiveAttack(x, y) {
+      function receiveAttack(x, y) {
         // Check if the move is legal (not already attacked)
         const isLegalMove = !this.missedAttacks.some(
           (coord) => coord.x === x && coord.y === y
@@ -46,3 +46,4 @@ const gameBoard=()=>{
             };
 }
 export default gameBoard;
+// module.exports=gameBoard;

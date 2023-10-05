@@ -8,13 +8,9 @@ function Player(name) {
       );
   
       if (isLegalMove) {
-        const attackResult = enemyGameboard.receiveAttack(x, y);
-        return {
-          playerName: name, // Access the player's name directly
-          coordinates: { x, y },
-          isHit: attackResult.isHit,
-          isSunk: attackResult.isSunk,
-        };
+      }
+      else{
+        this.takeTurnComputer(enemyGameboard);
       }
   
       // Return information about the illegal move
@@ -48,10 +44,10 @@ function Player(name) {
           isIllegalMove: true,
         };
       }
+    
     return {
       takeTurnComputer,
-      takeTurnPlayer,
-      name,
+      takeTurnPlayer
     };
   }
   
